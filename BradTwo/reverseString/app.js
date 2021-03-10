@@ -17,6 +17,28 @@ function reverseArray(str) {
   //   console.log(str[i]);
   // }
   // return revString;
-}
+  //! For of loop
+  //   let revString = "";
+  //   for (const char of str) {
+  //     revString = revString + char;
+  //   }
+  //   return revString;
 
+  //! ForEach
+  // revString = "";
+  // str.split("").forEach((item) => {
+  //   revString = item + revString;
+  // });
+  // return revString;
+
+  //! Map
+  // let revString = "";
+  // str.split("").map((item) => (revString = item + revString));
+  // return revString;
+
+  //! Reduce
+  return str.split("").reduce((accumulator, currentValue) => {
+    return currentValue + accumulator;
+  }, "");
+}
 console.log(reverseArray("hello"));
