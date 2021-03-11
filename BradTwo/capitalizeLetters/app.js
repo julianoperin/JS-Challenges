@@ -10,13 +10,13 @@ function capitalizeLetter(str) {
   // return newArr.join(" ");
 
   //! Using Map
-  const newStr = str
+  return str
     .toLowerCase()
     .split(" ")
     .map((item) => {
       return item.substring(0, 1).toUpperCase() + item.substring(1);
-    });
-  return newStr.join(" ");
+    })
+    .join(" ");
 }
 
 console.log(capitalizeLetter("i love pizza"));
