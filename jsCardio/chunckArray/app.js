@@ -1,10 +1,24 @@
-function fizzBuzz() {
-  for (let i = 1; i <= 100; i++) {
-    if (i % 3 === 0 && i % 5 === 0) console.log("FizzBuzz");
-    else if (i % 3 === 0) console.log("Fizz");
-    else if (i % 5 === 0) console.log("Buzz");
-    else console.log(i);
+// --- Directions
+// Given an array and chunk size, divide the array into many subarrays
+// where each subarray is of length size
+// --- Examples
+// chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+// chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+// chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+// chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+
+function chunk(arr, len) {
+  const chunkedArr = [];
+  let i = 0;
+
+  while (i < arr.length) {
+    chunkedArr.push(arr.slice(i, i + len));
+    // Increment by chunk length
+    i += len;
   }
+
+  return chunkedArr;
 }
 
-fizzBuzz();
+console.log(chunk([1, 2, 3, 4, 5, 6, 7], 2));
