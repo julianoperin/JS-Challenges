@@ -17,6 +17,13 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  let stairs = "";
 
-module.exports = steps;
+  for (let line = "#"; line <= n; line += "#") {
+    stairs += line;
+  }
+  return stairs;
+}
+
+console.log(steps(5));
