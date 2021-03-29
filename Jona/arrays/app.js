@@ -63,3 +63,87 @@ const newArr = [1, 2, ...arr];
 
 console.log(newArr); // [1, 2, 4, 5, 6]
 console.log(...newArr); // 1 2 4 5 6
+
+// Copy Array
+const copyOfArray = [...newArr]; // [1, 2, 4, 5, 6]
+// Merge Two Arrays
+const a = [1, 2, 3];
+const b = [4, 5, 6];
+const newAB = [...a, ...b];
+console.log(newAB); // [1, 2, 3, 4, 5, 6]
+
+// Iterables: arrays, strings, maps, sets, NOT objects
+const str = "Juliano";
+const letters = [...str];
+console.log(letters); // ["J", "u", "l", "i", "a", "n", "o"]
+
+// THE SPREAD OPERATOR WORKS WITH OBJECTS AS WELL
+
+// REST OPERATOR
+// 1) Destructoring
+const books = {
+  first: {
+    name: "Alquimist",
+  },
+  second: {
+    name: "Lamaria",
+  },
+  third: {
+    name: "lendia",
+  },
+};
+
+const { first, ...others } = books;
+console.log("others", others); // second: {…}, third: {…}
+
+//  || OR Operator
+//Setting default values
+const isItCold = undefined || "It's not Cold!";
+console.log(isItCold); // It's not Cold!
+
+//  && AND Operator
+// return the first if it falsy truthy, no need to go to the second one
+console.log("Hello" && 20 && null && "Juju"); // null
+
+// Pratical Example
+// You can substitute the If statement with the AND operator
+const order = "Philly Steak";
+if (order) {
+  console.log("Order placed with if statement!");
+}
+order && console.log("Order Placed with &&");
+
+// NULISH Coalescing ??
+// let guest = 0;
+// let numberOfGuests = guest || 10;
+// console.log(numberOfGuests); // returns 10 => BAD
+
+let guest = 0;
+let numberOfGuests = guest ?? 10;
+console.log(numberOfGuests); // returns 10 => BAD
+
+// OPTIONAL CHAINING (?.)
+const users = [
+  {
+    name: "Juliano",
+    phone: 3457891231,
+  },
+];
+
+console.log(users[0]?.name ?? "User Does Not Exists!"); // Juliano
+
+// const odds = {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   }
+
+//   const {
+//     odds: { team1, x: draw, team2 }, // Change the name
+//   } = game;
+
+//   const {
+//     odds: { team1 = 2, x: draw = 0, team2 = 10 }, //Assign a default value if empty
+//   } = game;
+
+// THE FOR OF LOOP
