@@ -17,13 +17,11 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-  let stairs = "";
-
-  for (let line = "#"; line <= n; line += "#") {
-    stairs += line;
-  }
-  return stairs;
-}
+function steps(n) {}
 
 console.log(steps(5));
+
+for (let line = "#"; line <= n; line += "#") {
+  console.log(line);
+}
+return;
