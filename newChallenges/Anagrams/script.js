@@ -1,25 +1,18 @@
-// --- Directions
-// Check to see if two provided strings are anagrams of each other.
-// One string is an anagram of another if it uses the same characters
-// in the same quantity. Only consider characters, not spaces
-// or punctuation.  Consider capital letters to be the same as lower case
-// --- Examples
-//   anagrams('rail safety', 'fairy tales') --> True
-//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
-//   anagrams('Hi there', 'Bye there') --> False
+//! Anagrams
+// > build a helper function to clean and store the string inside an obj with Key Value pairs
+// > Compare if the keys are equal
+// > loop over on obj and check to see if they are equal
 
-// > loop over two strings and build a new object with key value pairs
-//! FIRST SOLUTION
-// function anagrams(stringA, stringB) {
-//   const aCharMap = buildCharMap(stringA);
-//   const bCharMap = buildCharMap(stringB);
+// function checkAnagrams(stringA, stringB) {
+//   const charMapA = cleanFunction(stringA);
+//   const charMapB = cleanFunction(stringB);
 
-//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//   if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
 //     return false;
 //   }
 
-//   for (let char in aCharMap) {
-//     if (aCharMap[char] !== bCharMap[char]) {
+//   for (let char in charMapA) {
+//     if (charMapA[char] !== charMapB[char]) {
 //       return false;
 //     }
 //   }
@@ -27,34 +20,16 @@
 //   return true;
 // }
 
-// function buildCharMap(str) {
+// function cleanFunction(str) {
 //   const charMap = {};
-//   for (let el of str.replace(/[^\w]/g, '').toLowerCase()) {
-//     if (!charMap[el]) {
-//       charMap[el] = 1;
+//   for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+//     if (!charMap[char]) {
+//       charMap[char] = 1;
 //     } else {
-//       charMap[el]++;
+//       charMap[char]++;
 //     }
 //   }
 //   return charMap;
 // }
-// console.log(anagrams('rail safety', 'fairy tales'));
-//!
 
-//! SECOND SOLUTION
-function anagrams(stringA, stringB) {
-  return cleanString(stringA) === cleanString(stringB);
-}
-
-function cleanString(str) {
-  const sorted = str
-    .replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('');
-
-  return sorted;
-}
-
-console.log(anagrams('rail safety', 'fairy tales'));
+// console.log(checkAnagrams('Juliano', 'nailuJ'));
