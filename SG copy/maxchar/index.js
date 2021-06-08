@@ -6,6 +6,56 @@
 // maxChar("apple 1231111") === "1"
 
 // function maxChar(str) {
+//   const charMap = {};
+//   let maxChar = "";
+//   let maxNumber = 0;
+
+//   for (let char of str) {
+//     if (charMap[char]) {
+//       charMap[char]++;
+//     } else {
+//       charMap[char] = 1;
+//     }
+//   }
+
+//   for (let el in charMap) {
+//     if (charMap[el] > maxNumber) {
+//       maxNumber = charMap[el];
+//       maxChar = el;
+//     }
+//   }
+
+//   console.log(maxNumber, maxChar);
+//   return maxChar;
+// }
+
+// console.log(maxChar("apple"));
+
+function maxChar(str) {
+  const charMap = {};
+  let num = 0;
+  let letter = "";
+
+  for (let char of str) {
+    if (charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  }
+
+  for (let el in charMap) {
+    if (charMap[el] > num) {
+      num = charMap[el];
+      letter = el;
+    }
+  }
+  return letter;
+}
+
+console.log(maxChar("helicopter"));
+
+// function maxChar(str) {
 //   const newArr = str.split("");
 //   const charObj = {};
 //   let max = 0;
@@ -58,30 +108,3 @@
 // }
 
 // console.log(maxChar("apple"));
-
-function maxChar(str) {
-  const charMap = {};
-  let maxChar = "";
-  let maxNumber = 0;
-
-  for (let char of str) {
-    if (charMap[char]) {
-      charMap[char]++;
-    } else {
-      charMap[char] = 1;
-    }
-  }
-
-  for (let el in charMap) {
-    if (charMap[el] > maxNumber) {
-      maxNumber = charMap[el];
-      maxChar = el;
-    }
-  }
-
-  console.log(maxNumber);
-  console.log(maxChar);
-  return maxChar;
-}
-
-console.log(maxChar("apple"));

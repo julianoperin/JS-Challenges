@@ -8,8 +8,21 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {
-  const reversed = n.toString().split("").reverse().join("");
-  return parseInt(reversed) * Math.sign(n);
+// transform to string, reverse, transform back to number, compare
+// use Math.sign()
+
+function intReverse(n) {
+  const reversedInt = n
+    .toString()
+    .split("")
+    .reduce((acc, cValue) => cValue + acc, "");
+  return parseInt(reversedInt) * Math.sign(n);
 }
-console.log(reverseInt(-0005));
+
+console.log(intReverse(981));
+
+// function reverseInt(n) {
+//   const reversed = n.toString().split("").reverse().join("");
+//   return parseInt(reversed) * Math.sign(n);
+// }
+// console.log(reverseInt(-0005));
