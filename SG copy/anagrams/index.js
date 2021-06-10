@@ -9,15 +9,35 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+  const alfa = helper(stringA);
+  const bravo = helper(stringB);
+  console.log(alfa);
+  console.log(bravo);
 
-    
+  if (Object.keys(alfa).length !== Object.keys(bravo).length) {
+    return false;
+  }
+
+  for (let char in alfa) {
+    if (alfa[char] !== alfa[char]) {
+      return false;
+    }
+  }
+  return true;
 }
 
-console.log(anagrams());
-
-
-
-
+function helper(str) {
+  charObj = {};
+  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+    if (charObj[char]) {
+      charObj[char]++;
+    } else {
+      charObj[char] = 1;
+    }
+  }
+  return charObj;
+}
+console.log(anagrams("rail safety", "fairy tales"));
 
 // const word = "HI THERE!!!";
 

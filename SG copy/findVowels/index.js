@@ -13,20 +13,20 @@
 // console.log(findVowels("JavaScript"));
 
 //! Second option
-function findVowels(str) {
-  let numberOfVowels = 0;
-  const checker = ["a", "e", "i", "o", "u"];
+// function findVowels(str) {
+//   let numberOfVowels = 0;
+//   const checker = ["a", "e", "i", "o", "u"];
 
-  for (let el of str.toLowerCase()) {
-    if (checker.includes(el)) {
-      numberOfVowels++;
-    }
-  }
+//   for (let el of str.toLowerCase()) {
+//     if (checker.includes(el)) {
+//       numberOfVowels++;
+//     }
+//   }
 
-  return numberOfVowels;
-}
+//   return numberOfVowels;
+// }
 
-console.log(findVowels("JavaScript"));
+// console.log(findVowels("JavaScript"));
 
 //! Third option with REGEX
 // function findVowels(str) {
@@ -35,3 +35,15 @@ console.log(findVowels("JavaScript"));
 // }
 
 // console.log(findVowels("JavaScript"));
+
+function findVowels(str) {
+  let counter = 0;
+  for (let el of str) {
+    if (el === "a" || el === "e" || el === "i" || el === "o" || el === "u") {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(findVowels("JavaScript is nice!"));
