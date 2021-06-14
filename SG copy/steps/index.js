@@ -17,11 +17,28 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
-
-console.log(steps(5));
-
-for (let line = "#"; line <= n; line += "#") {
-  console.log(line);
+// No space
+function steps(n) {
+  for (let line = "#"; line.length < n; line += "#") {
+    console.log(line);
+  }
 }
-return;
+console.log(steps(10));
+
+// With space
+function stepsWithSpace(n) {
+  for (let row = 0; row < n; row++) {
+    let stair = "";
+
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += "#";
+      } else {
+        stair += " ";
+      }
+    }
+    console.log(stair);
+  }
+}
+
+console.log(stepsWithSpace(10));
