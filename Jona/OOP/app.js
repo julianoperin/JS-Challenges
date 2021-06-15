@@ -29,3 +29,32 @@ console.log(Person);
 
 juliano.calcAge();
 juliano.sayHi();
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+
+console.log("===============");
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car.prototype.accelerate = function (speed) {
+  this.speed += 20;
+  console.log(`${this.make} is going at ${this.speed} km/h.`);
+};
+
+Car.prototype.brake = function (speed) {
+  this.speed -= 5;
+  console.log(`${this.make} is going at ${this.speed} km/h.`);
+};
+
+const BMW = new Car("Alfa", 120);
+const Mercedez = new Car("Bravo", 95);
+console.log(BMW);
+console.log(Mercedez);
+BMW.brake();
+BMW.accelerate();
+Mercedez.accelerate();
+Mercedez.brake();
