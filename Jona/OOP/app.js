@@ -52,9 +52,46 @@ Car.prototype.brake = function (speed) {
 
 const BMW = new Car("Alfa", 120);
 const Mercedez = new Car("Bravo", 95);
-console.log(BMW);
-console.log(Mercedez);
-BMW.brake();
+
 BMW.accelerate();
+BMW.brake();
 Mercedez.accelerate();
 Mercedez.brake();
+
+console.log("===============");
+
+//class expression
+// const PersonCl = class {
+
+// }
+
+// class declaration
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to prototype
+  calcAge() {
+    let currentYear = new Date().getFullYear();
+    console.log(currentYear - this.birthYear);
+  }
+  sayHi() {
+    console.log("Hey Jessica!");
+  }
+
+  get age() {
+    let currentYear = new Date().getFullYear();
+    return currentYear - this.birthYear;
+  }
+}
+
+const jessica = new PersonCl("Jessica James", 1995);
+console.log(jessica);
+jessica.calcAge();
+jessica.sayHi();
+console.log(jessica.age);
+
+// Classes are not hoisted.
+// Functions are and we can use them before declaration
