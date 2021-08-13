@@ -41,11 +41,21 @@
 //   return newReduceArr === str ? "Palindrome" : "NOT Palindrome";
 // }
 
-function isPalindrome(str) {
-  const reversed = str.split("").reduce((acc, cValue) => {
-    return cValue + acc;
-  }, "");
+// function isPalindrome(str) {
+//   const reversed = str.split("").reduce((acc, cValue) => {
+//     return cValue + acc;
+//   }, "");
 
-  return str === reversed;
+//   return str === reversed;
+// }
+// console.log(isPalindrome("racecar"));
+
+function isPalindrome(s, i) {
+  return (
+    (i = i || 0) < 0 ||
+    i >= s.length >> 1 ||
+    (s[i] == s[s.length - 1 - i] && isPalindrome(s, ++i))
+  );
 }
-console.log(isPalindrome("racecar"));
+
+isPalindrome("racecar");
