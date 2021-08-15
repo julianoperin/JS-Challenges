@@ -9,7 +9,7 @@ function missingLetter(str) {
     }
   }
 
-  return;
+  return undefined;
 }
 
 console.log(missingLetter("abcdef"));
